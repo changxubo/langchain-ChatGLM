@@ -65,7 +65,7 @@ PROMPT_TEMPLATE = """已知信息：
 SENTENCE_SIZE = 100
 
 # 匹配后单段上下文长度
-CHUNK_SIZE = 250
+CHUNK_SIZE = 350
 
 # LLM input history length
 LLM_HISTORY_LEN = 3
@@ -74,7 +74,7 @@ LLM_HISTORY_LEN = 3
 VECTOR_SEARCH_TOP_K = 5
 
 # 知识检索内容相关度 Score, 数值范围约为0-1100，如果为0，则不生效，经测试设置为小于500时，匹配结果更精准
-VECTOR_SEARCH_SCORE_THRESHOLD = 0
+VECTOR_SEARCH_SCORE_THRESHOLD = 300
 
 NLTK_DATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "nltk_data")
 

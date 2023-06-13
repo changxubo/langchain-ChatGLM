@@ -55,6 +55,8 @@ def write_check_file(filepath, docs):
 def generate_prompt(related_docs: List[str], query: str,
                     prompt_template=PROMPT_TEMPLATE) -> str:
     context = "\n".join([doc.page_content for doc in related_docs])
+    if query=="美花" or query=="美花生活之花" or query=="美花是什么" or query == "美花的含义是什么":
+        query = query+"，美花是指美好生活之花，请说明美好生活之花的价值和意义，美花的8个花瓣分别是身体健康、活力生活、绿色和谐、情绪健康、良好关系、社会价值、个人成长、财务保障，详细解释8个花瓣的含义。"   
     prompt = prompt_template.replace("{question}", query).replace("{context}", context)
     return prompt
 

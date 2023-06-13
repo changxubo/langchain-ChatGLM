@@ -1,3 +1,4 @@
+# coding: GBK
 import gradio as gr
 import os
 import shutil
@@ -206,19 +207,13 @@ block_css = """.importantButton {
 }"""
 
 webui_title = """
-# 🎉langchain-ChatGLM WebUI🎉
-👍 [https://github.com/imClumsyPanda/langchain-ChatGLM](https://github.com/imClumsyPanda/langchain-ChatGLM)
+# Amway ChatGLM
 """
+
 default_vs = vs_list[0] if len(vs_list) > 1 else "为空"
-init_message = f"""欢迎使用 langchain-ChatGLM Web UI！
+init_message = f"""欢迎使用 Amway ChatGLM，当前知识库{default_vs}。
 
-请在右侧切换模式，目前支持直接与 LLM 模型对话或基于本地知识库问答。
-
-知识库问答模式，选择知识库名称后，即可开始问答，当前知识库{default_vs}，如有需要可以在选择知识库名称后上传文件/文件夹至知识库。
-
-知识库暂不支持文件删除，该功能将在后续版本中推出。
 """
-
 model_status = init_model()
 
 default_theme_args = dict(
@@ -303,7 +298,7 @@ with gr.Blocks(css=block_css, theme=gr.themes.Default(**default_theme_args)) as 
             with gr.Column(scale=10):
                 chatbot = gr.Chatbot([[None, knowledge_base_test_mode_info]],
                                      elem_id="chat-box",
-                                     show_label=False).style(height=750)
+                                     show_label=False).style(height=460)
                 query = gr.Textbox(show_label=False,
                                    placeholder="请输入提问内容，按回车进行提交").style(container=False)
             with gr.Column(scale=5):
